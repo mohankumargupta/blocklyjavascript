@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockly Javascript</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Load Blockly core -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <!-- Load the default blocks -->
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <!-- Load a generator -->
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <!-- Load a message file -->
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Access Blockly.
+        const blockly = Blockly.thing;
+
+        // Access the default blocks.
+        const default_blocks = Blockly.libraryBlocks["block_type"];
+
+        // Access the generator.
+        const jsGenerator = javascript.javascriptGenerator;
+
+        const toolbox = {
+          kind: "categoryToolbox",
+          contents: [
+            {
+              kind: "category",
+              name: "Control",
+              contents: [
+                {
+                  kind: "block",
+                  type: "controls_if",
+                },
+              ],
+            },
+            {
+              kind: "category",
+              name: "Logic",
+              contents: [
+                {
+                  kind: "block",
+                  type: "logic_compare",
+                },
+                {
+                  kind: "block",
+                  type: "logic_operation",
+                },
+                {
+                  kind: "block",
+                  type: "logic_boolean",
+                },
+              ],
+            },
+          ],
+        };
+
+        // Passes the ID.
+        const workspace = Blockly.inject(document.querySelector("#container"), {
+          toolbox: toolbox,
+        });
+      });
+
+      /*
+        const toolbox = {
+  // There are two kinds of toolboxes. The simpler one is a flyout toolbox.
+  kind: 'flyoutToolbox',
+  // The contents is the blocks and other items that exist in your toolbox.
+  contents: [
+    {
+      kind: 'block',
+      type: 'controls_if'
+    },
+    {
+      kind: 'block',
+      type: 'controls_whileUntil'
+    }
+    // You can add more blocks to this array.
+  ]
+};
+        
+        */
+
+      // Passes the injection div.
+      //const workspace = Blockly.inject(
+      //    document.getElementById('blocklyDiv'), { /* config */ });
+      //Blockly.setLocale(en)
+    </script>
+  </head>
+  <body class="h-screen flex">
+    <div id="container" class="w-1/2"></div>
+    <div id="editor" class="w-1/2">code</div>
+  </body>
+</html>
