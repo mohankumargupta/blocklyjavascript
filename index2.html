@@ -110,24 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         kind: 'category',
-        name: 'Colour',
-        colour: '%{BKY_COLOUR_HUE}',
-        contents: [
-          { kind: 'block', type: 'colour_picker' },
-          { kind: 'block', type: 'colour_random' },
-          { kind: 'block', type: 'colour_rgb' },
-          { kind: 'block', type: 'colour_blend' },
-        ],
-      },
-      {
-        kind: 'category',
         name: 'Variables',
         colour: '%{BKY_VARIABLES_HUE}',
         contents: [
           { kind: 'block', type: 'variables_get' },
           { kind: 'block', type: 'variables_set' },
-          { kind: 'block', type: 'variables_set_definition' },
-          { kind: 'block', type: 'variables_get_definition' },
         ],
       },
       {
@@ -148,9 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
         colour: '%{BKY_USER_INPUT_HUE}',
         contents: [
           { kind: 'block', type: 'text_prompt' },
-          { kind: 'block', type: 'window_alert' },
-          { kind: 'block', type: 'window_confirm' },
-          { kind: 'block', type: 'window_prompt' },
         ],
       },
     ]
