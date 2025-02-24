@@ -57,16 +57,11 @@ Tried a few, but this one from StackBlitz is a standout:
 
 https://stackblitz.com/edit/web-platform
 
-<br><br>
-
-Benefits:
-
-- do html in index.html
-- do css in styles.css
-- do javascript in script.js
-
-
-
+<br><br><br>
+Tips:
+- console access, click the word Console in the bottom right corner
+- Ctrl-B to hide sidebar, Ctrl-B again to show
+- You can make the preview bigger by dragging the dividing line
 <!--
 You can have `style` tag in markdown to override the style for the current page.
 Learn more: https://sli.dev/features/slide-scope-style
@@ -90,30 +85,12 @@ Here is another comment.
 
 ---
 transition: slide-up
-level: 2
 ---
 
-# Navigation
+# roadmap.sh
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+https://roadmap.sh/javascript
 
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
 layout: two-cols
