@@ -92,6 +92,38 @@ transition: slide-up
 https://roadmap.sh/javascript
 
 
+
+---
+transition: slide-left
+---
+
+# LearnXinYMinutes
+
+https://learnxinyminutes.com/javascript/
+
+Features:
+ - show all examples of syntax on 1 page.
+ - Helpful references at the end of the page
+
+Further links recommended:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview
+
+
+---
+transition: slide-up
+---
+
+# Online blockly javascript editor
+
+https://blockly-demo.appspot.com/static/demos/code/index.html
+
+Also have the demo on my webpage
+
+https://mohankumargupta.github.io/blocklyjavascript/demo/
+
+
+
 ---
 layout: two-cols
 layoutClass: gap-16
