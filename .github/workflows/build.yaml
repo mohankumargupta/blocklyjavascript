@@ -18,7 +18,7 @@ jobs:
       - name: Install slidev
         run:  npm i -g @slidev/cli @slidev/theme-default @slidev/theme-seriph vue
       - name: Get talk title
-        run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slidev-src/" | grep "slides/" | tail -n 1) .md)" >> "$GITHUB_ENV"
+        run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slidev-src/" | grep "slidev-src/" | tail -n 1) .md)" >> "$GITHUB_ENV"
       - name: Build
         run: slidev build --base /slides/${{env.talk_title}} slidev-src/${{env.talk_title}}/slides.md
       # - name: Deploy 🚀
