@@ -28,4 +28,6 @@ layout: quote
 transition: slide-left
 ---
 
+# References
 
+- https://www.codeguage.com/courses/js/functions-basics
