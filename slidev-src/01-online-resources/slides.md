@@ -98,3 +98,4 @@ w3schools should be used as follows:
 - if you want a "table of contents": https://www.w3schools.com/jsref/default.asp
 - DOM stuff is here: https://www.w3schools.com/js/js_htmldom.asp
   Click next at the end, it is multipart series of articles.
+- Do quiz-like exercises,split up by category, really good https://www.w3schools.com/js/js_exercises.asp
