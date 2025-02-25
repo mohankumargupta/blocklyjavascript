@@ -1,0 +1,34 @@
+name: Build slidev slides
+on: 
+  push:
+    paths:
+    - 'slidev-src/**'
+permissions: 
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Install slidev
+        run:  npm i -g @slidev/cli
+      - name: Get talk title
+        run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slidev-src/" | grep "slides/" | tail -n 1) .md)" >> "$GITHUB_ENV"
+      - name: Build
+        run: slidev build --base /slides/${{env.talk_title}} slidev-src/${{env.talk_title}}/slides.md
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4.6.4
+      #   with:
+      #     branch: main # The branch the action should deploy to.
+      #     folder: / # The folder the action should deploy.
+      #     target-folder: ${{ env.talk_title }}
+      #     clean: false
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
