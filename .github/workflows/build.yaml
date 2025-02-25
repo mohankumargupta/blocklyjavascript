@@ -15,10 +15,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Install dependencies
-        run: npm install
       - name: Install slidev
-        run:  npm i -g @slidev/cli
+        run:  npm i -g @slidev/cli @slidev/theme-default @slidev/theme-seriph vue
       - name: Get talk title
         run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slidev-src/" | grep "slides/" | tail -n 1) .md)" >> "$GITHUB_ENV"
       - name: Build
