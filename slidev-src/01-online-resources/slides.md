@@ -88,3 +88,13 @@ Features:
 - Pure javascript, no DOM stuff
 - Compare python and javascript with the same blockly program
 
+# w3schools
+
+w3schools should be used as follows:
+
+- If you are in mood for introductory tutorial, best is https://www.w3schools.com/js/js_examples.asp . It asks a series of questions like "What can javascript do?", and then for each answer, it gives you an live example to play with
+- variation is this page: https://www.w3schools.com/whatis/whatis_js.asp
+- as a reference, for example google "w3schools javascript querySelector"
+- if you want a "table of contents": https://www.w3schools.com/jsref/default.asp
+- DOM stuff is here: https://www.w3schools.com/js/js_htmldom.asp
+  Click next at the end, it is multipart series of articles.
