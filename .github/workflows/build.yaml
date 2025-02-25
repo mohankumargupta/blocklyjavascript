@@ -1,32 +1,65 @@
 name: Build slidev slides
-on: 
+
+on:
   push:
     paths:
-    - 'slidev-src/**'
-permissions: 
+      - 'slidev-src/**'
+
+permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - uses: actions/setup-node@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Install slidev
-        run:  npm i -g @slidev/cli @slidev/theme-default @slidev/theme-seriph vue
-      - name: Get talk title
-        run: echo "talk_title=$(basename $(git show ${{ github.sha }} --name-only -- "slidev-src/" | grep "slidev-src/" | tail -n 1) .md)" >> "$GITHUB_ENV"
-      - name: Build
-        run: slidev build --base /slides/${{env.talk_title}} slidev-src/${{env.talk_title}}/slides.md
+
+      # Step 3: Install Slidev CLI globally
+      - name: Install Slidev
+        run: npm i -g @slidev/cli @slidev/theme-default @slidev/theme-seriph vue
+
+      # Step 4: Clear the existing slides directory and create an empty one
+      - name: Clear and Recreate Slides Directory
+        run: |
+          rm -rf slides
+          mkdir slides
+
+      # Step 5: Build all Slidev presentations
+      - name: Build All Slidev Presentations
+        run: |
+          for dir in slidev-src/*; do
+            if [ -d "$dir" ]; then
+              talk_title=$(basename "$dir")
+              echo "Building slides for $talk_title..."
+              slidev build --base /slides/$talk_title "$dir/slides.md" --out "slides/$talk_title"
+            fi
+          done
+
+      # Step 6: Print the contents of the slides directory using tree
+      - name: Print Slides Directory Structure
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          echo "Contents of slides directory:"
+          tree slides
+
+      # Optional: Deploy the slides directory to GitHub Pages
+      # Uncomment the following step if you want to deploy the slides directory
       # - name: Deploy 🚀
       #   uses: JamesIves/github-pages-deploy-action@v4.6.4
       #   with:
-      #     branch: main # The branch the action should deploy to.
-      #     folder: / # The folder the action should deploy.
-      #     target-folder: ${{ env.talk_title }}
-      #     clean: false
+      #     branch: gh-pages # The branch the action should deploy to.
+      #     folder: slides # The folder the action should deploy.
+      #     clean: true
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
