@@ -2,6 +2,8 @@
 theme: seriph
 layout: cover
 transition: slide-up
+hideInToc: true
+colorSchema: light
 ---
 
 # Online Resources
@@ -16,14 +18,29 @@ Useful links for learning javascript.
 The last comment block of each slide is slide notes.
 -->
 
+
+
+---
+hideInToc: True
+---
+
+# Table of Contents
+
+<Toc/>
+
 ---
 transition: slide-left
 ---
-# Best HTML/CSS/javascript online live editor
+# Best Live editor
 
-Tried a few, but this one from StackBlitz is a standout:
+<a target="_blank" href="https://stackblitz.com/edit/web-platform">![Stackblitz web platform](https://developer.stackblitz.com/assets/overview.DFIug-7P.png)</a>
 
 https://stackblitz.com/edit/web-platform
+
+
+---
+title: Stackblitz
+---
 
 <br><br><br>
 Tips:
