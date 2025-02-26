@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /blocklyjavascript/slides/02-functions/ --out ../../slides/02-functions",
+    "build": "slidev build --base /blocklyjavascript/slides/01-online-resources/ --out ../../slides/01-online-resources",
     "dev": "slidev --open",
     "export": "slidev export"
   },

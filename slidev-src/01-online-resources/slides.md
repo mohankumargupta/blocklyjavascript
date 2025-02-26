@@ -100,3 +100,12 @@ w3schools should be used as follows:
   Click next at the end, it is multipart series of articles.
 - Do quiz-like exercises,split up by category, really good https://www.w3schools.com/js/js_exercises.asp
 
+---
+
+# Small exercises/quizzes
+
+https://www.jschallenger.com/
+
+---
+# TODO
+- toc, page numbers
