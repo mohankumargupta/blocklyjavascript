@@ -30,17 +30,22 @@ hideInToc: True
 
 ---
 transition: slide-left
+title: Best Live Editor
 ---
-# Best Live editor
+# Stackblitz
 
 <a target="_blank" href="https://stackblitz.com/edit/web-platform">![Stackblitz web platform](https://developer.stackblitz.com/assets/overview.DFIug-7P.png)</a>
 
+
+
+
+---
+hideInToc: true
+---
+
+# Stackblitz
+
 https://stackblitz.com/edit/web-platform
-
-
----
-title: Stackblitz
----
 
 <br><br><br>
 Tips:
@@ -58,20 +63,8 @@ Here is another comment.
 -->
 
 ---
-transition: slide-left
+title: LearnXinYMinutes
 ---
-
-
-# roadmap.sh
-
-https://roadmap.sh/javascript
-
-
-
----
-transition: slide-left
----
-
 
 # LearnXinYMinutes
 
@@ -84,6 +77,15 @@ Features:
 Further links recommended:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview
+
+
+
+---
+transition: slide-left
+---
+
+
+
 
 
 ---
@@ -105,6 +107,32 @@ Features:
 - Pure javascript, no DOM stuff
 - Compare python and javascript with the same blockly program
 
+---
+title: Small Exercises
+---
+
+# JSChallenger
+
+https://www.jschallenger.com/
+
+# roadmap.sh
+
+https://roadmap.sh/javascript
+
+General overview of topics:
+
+The following are interesting:
+
+- Functions
+- Introduction to Javascript
+- Object
+
+
+
+---
+title: w3schools
+---
+
 # w3schools
 
 w3schools should be used as follows:
@@ -118,11 +146,8 @@ w3schools should be used as follows:
 - Do quiz-like exercises,split up by category, really good https://www.w3schools.com/js/js_exercises.asp
 
 ---
-
-# Small exercises/quizzes
-
-https://www.jschallenger.com/
-
+title: TODO
 ---
+
 # TODO
 - toc, page numbers
