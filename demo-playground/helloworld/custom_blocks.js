@@ -34,9 +34,14 @@ Blockly.common.defineBlocksWithJsonArray([
         "args0": [
             {
                 "type": "field_input",
-                "name": "FIELDNAME",
+                "name": "ELEMENT",
                 "spellcheck": false
-            }
+            },
+            {
+                "type": "field_input",
+                "name": "TEXTCONTENT",
+                "spellcheck": false
+            }            
         ],
         "message1": "attributes %1",
         "args1": [
