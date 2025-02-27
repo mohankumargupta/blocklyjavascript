@@ -30,7 +30,7 @@ Blockly.common.defineBlocksWithJsonArray([
     },
     {
         "type": "elements_element_textcontent",
-        "message0": "%1 element with text content %2",
+        "message0": "%1 element with text content \"%2\"",
         "args0": [
             {
                 "type": "field_input",
