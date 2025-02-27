@@ -27,5 +27,16 @@ Blockly.common.defineBlocksWithJsonArray([
         "previousStatement": null,
         "nextStatement": null,
         "colour": "rgb(0, 191, 186)"
+    },
+    {
+        "type": "elements_element_textcontent",
+        "message0": '%1 element with text content \"%2\"',
+        "args0": [
+            {
+                "type": "field_input",
+                "name": "FIELDNAME",
+                "spellcheck": false
+            }
+        ]
     }
 ]);
