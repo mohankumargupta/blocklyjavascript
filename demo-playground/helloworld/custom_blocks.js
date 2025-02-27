@@ -13,5 +13,19 @@ Blockly.common.defineBlocksWithJsonArray([
         "previousStatement": null,
         "nextStatement": null,
         "colour": "rgb(144, 0, 144)"
+    },
+    {
+        "type": "elements_script",
+        "message0": "script element",
+        "message1": "%1",
+        "args1": [
+            {
+                "type": "input_statement",
+                "name": "STATEMENTS"
+            }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "rgb(0, 191, 186)"
     }
 ]);
