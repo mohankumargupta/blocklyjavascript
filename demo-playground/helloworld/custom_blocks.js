@@ -47,6 +47,9 @@ Blockly.common.defineBlocksWithJsonArray([
                 "type": "input_statement",
                 "name": "STATEMENT"
             }
-        ]
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "rgb(0, 191, 186)"        
     }
 ]);
