@@ -72,6 +72,6 @@ Blockly.common.defineBlocksWithJsonArray([
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
-        "colour": "rgb(0, 191, 186)"
+        "colour": "rgb(254, 214, 81)"
     }
 ]);
