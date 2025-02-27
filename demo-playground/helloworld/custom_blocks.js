@@ -12,6 +12,6 @@ Blockly.common.defineBlocksWithJsonArray([
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
-        "colour": "%{BKY_VARIABLES_HUE}"
+        "colour": "rgb(116, 91, 165)"
     }
 ]);
