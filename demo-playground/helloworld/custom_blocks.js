@@ -9,7 +9,7 @@ Blockly.common.defineBlocksWithJsonArray([
                 "check": "String"
             }
         ],
-        
+        "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
         "colour": "%{BKY_LISTS_HUE}"
