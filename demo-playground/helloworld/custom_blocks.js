@@ -1,5 +1,19 @@
 Blockly.common.defineBlocksWithJsonArray([
     {
+        "type": "functions_def",
+        "message0": "def %1",
+        "args0": [
+            {
+                "type": "field_input",
+                "name": "TEXT",
+                "check": "String"
+            }],
+        "inputsInline": true,        
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_PROCEDURES_HUE}",
+    },
+    {
         "type": "functions_call",
         "message0": "call %1",
         "args0": [
