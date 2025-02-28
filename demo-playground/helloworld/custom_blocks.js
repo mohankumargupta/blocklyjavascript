@@ -4,7 +4,7 @@ Blockly.common.defineBlocksWithJsonArray([
         "message0": "call %1",
         "args0": [
             {
-                "type": "input_value",
+                "type": "field_input",
                 "name": "TEXT",
                 "check": "String"
             }
