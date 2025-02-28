@@ -13,6 +13,7 @@ Blockly.common.defineBlocksWithJsonArray([
         "previousStatement": null,
         "nextStatement": null,
         "output": "String",
+        "colour": "%{BKY_PROCEDURES_HUE}",
     },
     {
         "type": "output_alert",
