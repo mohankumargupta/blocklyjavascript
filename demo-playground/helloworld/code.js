@@ -482,7 +482,52 @@ Code.init = function() {
   // and the infinite loop detection function.
   javascript.javascriptGenerator.addReservedWords('code,timeouts,checkTimeout');
 
-  Code.loadBlocks('');
+  const savedBlocks = `<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="elements_element_textcontent" id="Z%)e/M4NRjUaL/:Q@bB1" x="163" y="38">
+    <field name="ELEMENT">button</field>
+    <field name="TEXTCONTENT">Double Click?</field>
+    <statement name="STATEMENT">
+      <block type="elements_on" id="@ki?B]EqyuUbM6@p]f]R">
+        <field name="FIELDNAME">ITEM2</field>
+        <value name="VALUE">
+          <block type="functions_call" id="Rlh;77?,Srsr%BwJ=/$$">
+            <field name="TEXT">joke</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="elements_script" id="D(JJ$dgY=~bOQSVmXD{j">
+        <statement name="STATEMENTS">
+          <block type="functions_def" id="h7utkV+K\`n=}w{VkyGEt">
+            <field name="TEXT">joke</field>
+            <statement name="STATEMENTS">
+              <block type="output_alert" id="?Y3N-TPH81YM~dez38cM">
+                <value name="TEXT">
+                  <block type="text" id="-/wJBl.n2lTC3}8P}B8A">
+                    <field name="TEXT">Double Double?</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="output_alert" id="LzQWd4ypUW48xR3/2c/6">
+                    <value name="TEXT">
+                      <block type="text" id=".)/qv?CCt5vA9n#F2t*D">
+                        <field name="TEXT">Click Click?</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>`;
+
+Code.loadBlocks(savedBlocks);
+  //Code.loadBlocks('');
 
   if ('BlocklyStorage' in window) {
     // Hook a save function onto unload.
