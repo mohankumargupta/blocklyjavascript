@@ -11,7 +11,8 @@ Blockly.common.defineBlocksWithJsonArray([
         ],
         "inputsInline": true,        
         "previousStatement": null,
-        "nextStatement": null
+        "nextStatement": null,
+        "colour": "%{BKY_PROCEDURES_HUE}"
     },
     {
         "type": "functions_call",
