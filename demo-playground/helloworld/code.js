@@ -240,7 +240,7 @@ Code.LANG = Code.getLang();
  * @private
  */
 Code.TABS_ = [
-  'blocks', 'html', 'javascript','xml', 'json'
+  'blocks', 'html_fragment', 'javascript','xml', 'json'
 ];
 
 /**
@@ -365,7 +365,7 @@ Code.renderContent = function() {
     Code.attemptCodeGeneration(dart.dartGenerator);
   } else if (content.id === 'content_lua') {
     Code.attemptCodeGeneration(lua.luaGenerator);
-  } else if (content.id === 'content_html') {
+  } else if (content.id === 'content_html_fragment') {
     Code.attemptCodeGeneration(htmlGenerator);
   }
 
