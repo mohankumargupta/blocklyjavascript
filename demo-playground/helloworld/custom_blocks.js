@@ -9,6 +9,9 @@ Blockly.common.defineBlocksWithJsonArray([
                 "check": "String"
             }
         ],
+        "inputsInline": true,        
+        "previousStatement": null,
+        "nextStatement": null
     },
     {
         "type": "functions_call",
