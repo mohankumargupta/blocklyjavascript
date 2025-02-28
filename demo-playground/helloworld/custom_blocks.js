@@ -9,6 +9,13 @@ Blockly.common.defineBlocksWithJsonArray([
                 "check": "String"
             }
         ],
+        "message1": "%1",
+        "args1": [
+            {
+                "type": "input_statement",
+                "name": "STATEMENTS"
+            }
+        ],        
         "inputsInline": true,        
         "previousStatement": null,
         "nextStatement": null,
