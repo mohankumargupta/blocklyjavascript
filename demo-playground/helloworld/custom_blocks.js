@@ -12,7 +12,7 @@ Blockly.common.defineBlocksWithJsonArray([
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
-        
+        "output": "String",
     },
     {
         "type": "output_alert",
