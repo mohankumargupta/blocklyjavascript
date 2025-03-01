@@ -163,7 +163,7 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
 htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
   const tag = block.getFieldValue('TAG') || "";
   const textContent = block.getFieldValue('TEXT') || "";
-  let code = `<${tag}>${textContent}</${tag}>`;
+  let code = `<${tag}>${textContent}</${tag}>\n`;
   
   const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   if (nextBlock) {
