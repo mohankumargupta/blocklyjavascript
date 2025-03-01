@@ -1,4 +1,4 @@
-const htmlGenerator = new Blockly.Generator('HTML');
+let htmlGenerator = new Blockly.Generator('HTML');
 htmlGenerator['forBlock'] = {};
 
 const standard_blocks = [
