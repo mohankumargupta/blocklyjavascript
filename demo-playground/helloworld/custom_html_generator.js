@@ -181,3 +181,10 @@ htmlGenerator.forBlock['functions_call'] = function(block, generator) {
   return code;
 }
 
+htmlGenerator.forBlock['elements_on'] = function(block, generator) {
+  const event = block.getFieldValue('FIELDNAME') || "";
+  let event_js = event;
+  const code = `on${event_js}="`;
+  return code;
+}
+
