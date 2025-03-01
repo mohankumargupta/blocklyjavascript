@@ -132,12 +132,12 @@ htmlGenerator.forBlock['output_alert'] = function(block, generator) {
     const name = block.getFieldValue('TEXT');
     let code = `alert('${name}');\n`
     
-    const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-    if (nextBlock) {
-      // Recursively generate code for the next block
-      const nextCode = Blockly.JavaScript.blockToCode(nextBlock);
-      code += nextCode; // Append the generated code for the next block
-    }
+    // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+    // if (nextBlock) {
+    //   // Recursively generate code for the next block
+    //   const nextCode = Blockly.JavaScript.blockToCode(nextBlock);
+    //   code += nextCode; // Append the generated code for the next block
+    // }
 
     return code;
 }
