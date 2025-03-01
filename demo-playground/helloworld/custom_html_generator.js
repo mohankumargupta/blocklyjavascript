@@ -163,6 +163,14 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
 htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
   const tag = block.getFieldValue('TAG') || "";
   const textContent = block.getFieldValue('TEXT') || "";
-  const code = `<${tag}>${textContent}</${tag}>`;
+  let code = `<${tag}>${textContent}</${tag}>`;
+  
+  const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+  if (nextBlock) {
+    // Recursively generate code for the next block
+    const nextCode = generator.blockToCode(nextBlock);
+    code += nextCode; // Append the generated code for the next block
+  }
+  
   return code;
 }
