@@ -1,4 +1,5 @@
 const htmlGenerator = new Blockly.Generator('HTML');
+htmlGenerator['forBlock'] = {};
 
 const standard_blocks = [
     "lists_create_empty",
