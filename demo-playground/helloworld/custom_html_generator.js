@@ -128,8 +128,12 @@ jsonGenerator.forBlock['object'] = function (block, generator) {
 };
 */
 
+const Order = {
+  ATOMIC: 0
+};
+
 htmlGenerator.forBlock['output_alert'] = function(block, generator) {
-    const textValue = generator.valueToCode(block, 'TEXT', htmlGenerator.ORDER_ATOMIC) || "";
+    const textValue = generator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
     let code = `alert('${textValue}');\n`
     //const name = block.getFieldValue('TEXT');
     //let code = `alert('${name}');\n`
