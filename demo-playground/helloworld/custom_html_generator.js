@@ -1,6 +1,5 @@
 const htmlGenerator = new Blockly.Generator('HTML');
 
-
 const standard_blocks = [
     "lists_create_empty",
     "lists_create_with",
@@ -60,6 +59,10 @@ const standard_blocks = [
     "variables_get_dynamic",
     "variables_set_dynamic"
 ];
+
+for (const block of standard_blocks) {
+  htmlGenerator.forBlock[block] = javascriptGenerator[block];
+}
 
 /*
 jsonGenerator.scrub_ = function (block, code, thisOnly) {
