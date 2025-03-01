@@ -159,3 +159,10 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
   const code = `function ${function_name}() {\n${innerHTMLContent}}\n`;
   return code;
 }
+
+htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
+  const tag = block.getFieldValue('ELEMENT') || "";
+  const textContent = block.getFieldValue('TEXT') || "";
+  const code = `<${tag}>${textContent}</${tag}>`;
+  return code;
+}

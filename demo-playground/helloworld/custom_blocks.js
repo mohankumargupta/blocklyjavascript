@@ -70,11 +70,11 @@ Blockly.common.defineBlocksWithJsonArray([
         "args0": [
             {
                 "type": "field_input",
-                "name": "ELEMENT"
+                "name": "TAG"
             },
             {
                 "type": "field_input",
-                "name": "TEXTCONTENT"
+                "name": "TEXT"
             }            
         ],
         "message1": "attributes %1",
