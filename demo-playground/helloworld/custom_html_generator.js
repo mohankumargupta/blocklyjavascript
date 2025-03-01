@@ -154,7 +154,7 @@ htmlGenerator.forBlock['elements_script'] = function(block, generator) {
 }
 
 htmlGenerator.forBlock['functions_def'] = function(block, generator) {
-  const function_name = javascript.javascriptGenerator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
+  const function_name = block.getFieldValue('TEXT') || "";
   const innerHTMLContent = generator.statementToCode(block, 'STATEMENTS') || "";
   const code = `function ${function_name} {\n${innerHTMLContent}}\n`;
   return code;
