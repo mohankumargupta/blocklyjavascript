@@ -129,8 +129,10 @@ jsonGenerator.forBlock['object'] = function (block, generator) {
 */
 
 htmlGenerator.forBlock['output_alert'] = function(block, generator) {
-    const name = block.getFieldValue('TEXT');
-    let code = `alert('${name}');\n`
+    const textValue = generator.valueToCode(block, 'TEXT', htmlGenerator.ORDER_ATOMIC) || "";
+    let code = `alert('${textValue}');\n`
+    //const name = block.getFieldValue('TEXT');
+    //let code = `alert('${name}');\n`
     
     // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
     // if (nextBlock) {
