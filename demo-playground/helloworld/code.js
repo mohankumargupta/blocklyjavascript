@@ -483,35 +483,35 @@ Code.init = function() {
   javascript.javascriptGenerator.addReservedWords('code,timeouts,checkTimeout');
 
   const savedBlocks = `<xml xmlns="https://developers.google.com/blockly/xml">
-  <block type="elements_element_textcontent" id="Z%)e/M4NRjUaL/:Q@bB1" x="163" y="38">
+  <block type="elements_element_textcontent" id="Z_e_M4NRjUaL_Q_bB1" x="163" y="38">
     <field name="TAG">button</field>
     <field name="TEXT">Double Click?</field>
     <statement name="STATEMENT">
-      <block type="elements_on" id="@ki?B]EqyuUbM6@p]f]R">
-        <field name="FIELDNAME">ITEM2</field>
+      <block type="elements_on" id="ki_B_EqyuUbM6_p_f_R">
+        <field name="FIELDNAME">dblclick</field>
         <value name="VALUE">
-          <block type="functions_call" id="Rlh;77?,Srsr%BwJ=/$$">
+          <block type="functions_call" id="Rlh_77_Srsr_BwJ__$">
             <field name="TEXT">joke</field>
           </block>
         </value>
       </block>
     </statement>
     <next>
-      <block type="elements_script" id="D(JJ$dgY=~bOQSVmXD{j">
+      <block type="elements_script" id="D_JJ_dgY_bOQSVmXD_j">
         <statement name="STATEMENTS">
-          <block type="functions_def" id="h7utkV+K`n=}w{VkyGEt">
+          <block type="functions_def" id="h7utkV_K_n_w_VkyGEt">
             <field name="TEXT">joke</field>
             <statement name="STATEMENTS">
-              <block type="output_alert" id="?Y3N-TPH81YM~dez38cM">
+              <block type="output_alert" id="Y3N_TPH81YM_dez38cM">
                 <value name="TEXT">
-                  <block type="text" id="-/wJBl.n2lTC3}8P}B8A">
+                  <block type="text" id="wJBl_n2lTC3_8P_B8A">
                     <field name="TEXT">Double Double?</field>
                   </block>
                 </value>
                 <next>
-                  <block type="output_alert" id="LzQWd4ypUW48xR3/2c/6">
+                  <block type="output_alert" id="LzQWd4ypUW48xR3_2c_6">
                     <value name="TEXT">
-                      <block type="text" id=".)/qv?CCt5vA9n#F2t*D">
+                      <block type="text" id="qv_Ct5vA9n_F2t_D">
                         <field name="TEXT">Click Click!</field>
                       </block>
                     </value>
@@ -524,7 +524,8 @@ Code.init = function() {
       </block>
     </next>
   </block>
-</xml>`;
+  </xml>
+`;
 
 Code.loadBlocks(savedBlocks);
   //Code.loadBlocks('');
