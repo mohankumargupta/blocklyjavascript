@@ -133,7 +133,6 @@ const Order = {
 };
 
 htmlGenerator.forBlock['output_alert'] = function(block, generator) {
-    //const textValue = generator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
     const textValue = javascript.javascriptGenerator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
     let code = `alert(${textValue});\n`
     
@@ -144,5 +143,11 @@ htmlGenerator.forBlock['output_alert'] = function(block, generator) {
       code += nextCode; // Append the generated code for the next block
     }
 
+    return code;
+}
+
+
+htmlGenerator.forBlock['elements_script'] = function(block, generator) {
+    const code = generator.statementToCode(block, 'STATEMENTS') || "";
     return code;
 }
