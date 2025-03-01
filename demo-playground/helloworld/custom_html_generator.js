@@ -137,12 +137,12 @@ htmlGenerator.forBlock['output_alert'] = function(block, generator) {
     const textValue = javascript.javascriptGenerator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
     let code = `alert(${textValue});\n`
     
-    // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-    // if (nextBlock) {
-    //   // Recursively generate code for the next block
-    //   const nextCode = Blockly.JavaScript.blockToCode(nextBlock);
-    //   code += nextCode; // Append the generated code for the next block
-    // }
+    const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+    if (nextBlock) {
+      // Recursively generate code for the next block
+      const nextCode = Blockly.JavaScript.blockToCode(nextBlock);
+      code += nextCode; // Append the generated code for the next block
+    }
 
     return code;
 }
