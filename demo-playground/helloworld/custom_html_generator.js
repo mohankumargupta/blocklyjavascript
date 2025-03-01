@@ -133,10 +133,9 @@ const Order = {
 };
 
 htmlGenerator.forBlock['output_alert'] = function(block, generator) {
-    const textValue = generator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
+    //const textValue = generator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
+    const textValue = javascript.javascriptGenerator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
     let code = `alert('${textValue}');\n`
-    //const name = block.getFieldValue('TEXT');
-    //let code = `alert('${name}');\n`
     
     // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
     // if (nextBlock) {
