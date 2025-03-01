@@ -128,7 +128,7 @@ jsonGenerator.forBlock['object'] = function (block, generator) {
 };
 */
 
-htmlGenerator.forBlock['elements_on'] = function(block, generator) {
-    //const name = block.getFieldValue('FIELDNAME');
-    return '<p>boo</p>';
+htmlGenerator.forBlock['output_alert'] = function(block, generator) {
+    const name = block.getFieldValue('TEXT');
+    return `alert('{name}');`;
 }
