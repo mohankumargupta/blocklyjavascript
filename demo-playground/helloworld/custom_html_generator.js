@@ -174,3 +174,10 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   
   return code;
 }
+
+htmlGenerator.forBlock['functions_call'] = function(block, generator) {
+  const function_name = block.getFieldValue('TEXT') || "";
+  const code = `${function_name}()`;
+  return code;
+}
+
