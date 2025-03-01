@@ -140,7 +140,7 @@ htmlGenerator.forBlock['output_alert'] = function(block, generator) {
     const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
     if (nextBlock) {
       // Recursively generate code for the next block
-      const nextCode = Blockly.JavaScript.blockToCode(nextBlock);
+      const nextCode = generator.blockToCode(nextBlock);
       code += nextCode; // Append the generated code for the next block
     }
 
