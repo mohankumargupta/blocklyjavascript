@@ -130,5 +130,5 @@ jsonGenerator.forBlock['object'] = function (block, generator) {
 
 htmlGenerator.forBlock['output_alert'] = function(block, generator) {
     const name = block.getFieldValue('TEXT');
-    return `alert('{name}');`;
+    return `alert('${name}');`;
 }
