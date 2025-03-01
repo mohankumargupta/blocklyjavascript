@@ -62,7 +62,7 @@ const standard_blocks = [
 ];
 
 for (const block of standard_blocks) {
-  const forblock = javascript.javascriptGenerator[block];
+  const forblock = javascript.javascriptGenerator.forBlock[block];
   htmlGenerator.forBlock[block] = forblock;
 }
 
