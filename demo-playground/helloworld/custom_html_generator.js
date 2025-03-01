@@ -149,13 +149,13 @@ htmlGenerator.forBlock['output_alert'] = function(block, generator) {
 
 htmlGenerator.forBlock['elements_script'] = function(block, generator) {
     const innerHTMLContent = generator.statementToCode(block, 'STATEMENTS') || "";
-    const code = `<script>${innerHTMLContent}</script>`;
+    const code = `<script>\n${innerHTMLContent}</script>`;
     return code;
 }
 
 htmlGenerator.forBlock['functions_def'] = function(block, generator) {
   const function_name = javascript.javascriptGenerator.valueToCode(block, 'TEXT', Order.ATOMIC) || "";
   const innerHTMLContent = generator.statementToCode(block, 'STATEMENTS') || "";
-  const code = `function ${function_name} {\n${innerHTMLContent}</script>\n`;
+  const code = `function ${function_name} {\n${innerHTMLContent}}\n`;
   return code;
 }
