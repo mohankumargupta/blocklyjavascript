@@ -180,12 +180,13 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   const eventType = eventMap[textContent] || 'click';
 
   const inputString = generator.statementToCode(block, 'STATEMENT') || "";
-  const attributes = inputString.split(/\s+/).trimStart();
+  const attributes = inputString.split(/\s+/);
   
   const processedAttributes = attributes.map(attr => {
-      const match = attr.match(/^on(\w+)="([^"]+)"$/);
+      const newattr = attr.trimStart();
+      const match = newattr.match(/^on(\w+)="([^"]+)"$/);
       if (!match) {
-        throw new Error(`Invalid attribute format: ${attr}`);
+        throw new Error(`Invalid attribute format: ${newattr}`);
       }
     
       const eventKey = match[1]; 
@@ -199,7 +200,7 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   
   return `on${domEventName}="${functionCall}"`;
     });
-    
+
 // Step 3: Join the processed attributes back into a single string
 const result = processedAttributes.join(' ');
   
