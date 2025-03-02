@@ -367,6 +367,8 @@ Code.renderContent = function() {
     Code.attemptCodeGeneration(lua.luaGenerator);
   } else if (content.id === 'content_html_fragment') {
     Code.attemptCodeGeneration(htmlGenerator);
+  } else if (content.id === 'content_preview') {
+    Code.attemptCodeGeneration(htmlGenerator);
   }
 
   if (typeof PR === 'object') {

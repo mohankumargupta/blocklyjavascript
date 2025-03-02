@@ -61,6 +61,11 @@ const standard_blocks = [
     "variables_set_dynamic"
 ];
 
+
+htmlGenerator.finish = function(code) {
+  return code;
+}
+
 for (const block of standard_blocks) {
   const forblock = javascript.javascriptGenerator.forBlock[block];
   htmlGenerator.forBlock[block] = forblock;

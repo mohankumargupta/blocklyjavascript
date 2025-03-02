@@ -47,6 +47,8 @@
           <tr id="tabRow" height="1em">
             <td id="tab_blocks" class="tabon">...</td>
             <td class="tabmin tab_collapse">&nbsp;</td>
+            <td id="tab_preview" class="taboff tab_collapse">Preview</td>
+            <td class="tabmin tab_collapse">&nbsp;</td>   
             <td id="tab_html_fragment" class="taboff tab_collapse">HTML-Fragment</td>
             <td class="tabmin tab_collapse">&nbsp;</td>            
             <td id="tab_javascript" class="taboff tab_collapse">JavaScript</td>
@@ -79,6 +81,9 @@
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
+  <pre id="content_html_preview" class="content prettyprint lang-html">
+    <iframe srcdoc=""></iframe>
+  </pre>
   <pre id="content_html_fragment" class="content prettyprint lang-html"></pre>
   <pre id="content_javascript" class="content prettyprint lang-js"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
