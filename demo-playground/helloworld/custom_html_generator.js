@@ -162,7 +162,7 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
 
 htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
   const tag = block.getFieldValue('TAG') || "";
-  const eventName = block.getFieldValue('TEXT') || "";
+  const textContent = block.getFieldValue('TEXT') || "";
   //let code = `<${tag}>${eventName}</${tag}>\n`;
 
     // Generate code for the input value (the "do" part)
@@ -177,10 +177,10 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
     'ITEM1': 'click',
     'ITEM2': 'dblclick' // Use standard DOM event names
   };
-  const eventType = eventMap[eventName] || 'click';
+  const eventType = eventMap[textContent] || 'click';
 
   const attributes = generator.statementToCode(block, 'STATEMENT') || "";
-  const code = `<${tag} ${attributes} ${eventType}="${actionCode}">${eventName}</${tag}>\n`;
+  const code = `<${tag} ${attributes} ${eventType}="${actionCode}">${textContent}</${tag}>\n`;
 
   //const eventHandler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
 
@@ -197,7 +197,7 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
 htmlGenerator.forBlock['functions_call'] = function(block, generator) {
   const function_name = block.getFieldValue('TEXT') || "";
   const code = `${function_name}()`;
-  return code;
+  return [code, Order.ATOMIC];
 }
 
 /*
