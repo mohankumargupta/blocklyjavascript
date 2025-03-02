@@ -397,7 +397,7 @@ Code.previewHTML = function(generator) {
 
   if (Code.checkAllGeneratorFunctionsDefined(generator)) {
     var code = generator.workspaceToCode(Code.workspace);
-    document.querySelector("#previewIframe").srcDoc = "<h1>hi</h1>";
+    document.querySelector("#previewIframe").srcdoc = code;
     //iframe.contentWindow.location.reload()
     //content.textContent = code;
     // Remove the 'prettyprinted' class, so that Prettify will recalculate.
