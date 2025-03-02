@@ -240,7 +240,7 @@ Code.LANG = Code.getLang();
  * @private
  */
 Code.TABS_ = [
-  'blocks', 'html_fragment', 'javascript','xml', 'json'
+  'blocks', 'preview', 'html_fragment', 'javascript','xml', 'json'
 ];
 
 /**
@@ -248,7 +248,7 @@ Code.TABS_ = [
  * @private
  */
 Code.TABS_DISPLAY_ = [
-  'Blocks', 'HTML-Fragment', 'JavaScript', 'PHP', 'Python', 'Dart', 'Lua', 'XML', 'JSON'
+  'Blocks', 'Preview' ,'HTML-Fragment', 'JavaScript', 'PHP', 'Python', 'Dart', 'Lua', 'XML', 'JSON'
 ];
 
 Code.selected = 'blocks';
