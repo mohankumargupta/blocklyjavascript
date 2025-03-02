@@ -163,7 +163,7 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
 htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
   const tag = block.getFieldValue('TAG') || "";
   const eventName = block.getFieldValue('TEXT') || "";
-  let code = `<${tag}>${eventName}</${tag}>\n`;
+  //let code = `<${tag}>${eventName}</${tag}>\n`;
 
     // Generate code for the input value (the "do" part)
   const actionCode = generator.valueToCode(
@@ -179,7 +179,10 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   };
   const eventType = eventMap[eventName] || 'click';
 
-  const eventHandler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
+  const attributes = generator.statementToCode(block, 'STATEMENT') || "";
+  const code = `<${tag} ${attributes} ${eventType}="${actionCode}">${eventName}</${tag}>\n`;
+
+  //const eventHandler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
 
   // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   // if (nextBlock) {
