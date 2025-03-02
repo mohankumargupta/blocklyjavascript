@@ -188,16 +188,15 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
         throw new Error(`Invalid attribute format: ${attr}`);
       }
     
-      const eventKey = match[1]; // e.g., "ITEM1"
-      const functionCall = match[2]; // e.g., "joke()"
+      const eventKey = match[1]; 
+      const functionCall = match[2]; 
     
-      // Look up the event key in the eventMap
       const domEventName = eventMap[eventKey];
       if (!domEventName) {
         throw new Error(`No mapping found for event key: ${eventKey}`);
       }
   
-  // Construct the new attribute with the mapped DOM event name
+  
   return `on${domEventName}="${functionCall}"`;
     });
 });
