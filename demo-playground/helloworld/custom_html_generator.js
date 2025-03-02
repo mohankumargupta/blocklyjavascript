@@ -180,7 +180,8 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   const eventType = eventMap[textContent] || 'click';
 
   const inputString = generator.statementToCode(block, 'STATEMENT') || "";
-  const attributes = inputString.split(/\s+/);
+  const attributes = inputString.split(/\s+/).trimStart();
+  
   const processedAttributes = attributes.map(attr => {
     const processedAttributes = attributes.map(attr => {
       const match = attr.match(/^on(\w+)="([^"]+)"$/);
