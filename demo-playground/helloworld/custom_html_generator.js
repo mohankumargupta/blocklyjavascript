@@ -179,23 +179,47 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   };
   const eventType = eventMap[textContent] || 'click';
 
-  const attributes = generator.statementToCode(block, 'STATEMENT') || "";
-  const code = `<${tag} ${attributes} ${eventType}="${actionCode}">${textContent}</${tag}>\n`;
+  const inputString = generator.statementToCode(block, 'STATEMENT') || "";
+  const attributes = inputString.split(/\s+/);
+  const processedAttributes = attributes.map(attr => {
+    const processedAttributes = attributes.map(attr => {
+      const match = attr.match(/^on(\w+)="([^"]+)"$/);
+      if (!match) {
+        throw new Error(`Invalid attribute format: ${attr}`);
+      }
+    
+      const eventKey = match[1]; // e.g., "ITEM1"
+      const functionCall = match[2]; // e.g., "joke()"
+    
+      // Look up the event key in the eventMap
+      const domEventName = eventMap[eventKey];
+      if (!domEventName) {
+        throw new Error(`No mapping found for event key: ${eventKey}`);
+      }
+  
+  // Construct the new attribute with the mapped DOM event name
+  return `on${domEventName}="${functionCall}"`;
+    });
+});
 
-  //const eventHandler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
-
+// Step 3: Join the processed attributes back into a single string
+const result = processedAttributes.join(' ');
+  
+  let code = `<${tag} ${result}>${textContent}</${tag}>\n`;
+    
   // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   // if (nextBlock) {
-  //   // Recursively generate code for the next block
-  //   const nextCode = generator.blockToCode(nextBlock);
-  //   code += nextCode; // Append the generated code for the next block
-  // }
-  
+    //   // Recursively generate code for the next block
+    //   const nextCode = generator.blockToCode(nextBlock);
+    //   code += nextCode; // Append the generated code for the next block
+    // }
+    
   return code;
 }
 
 htmlGenerator.forBlock['functions_call'] = function(block, generator) {
   const function_name = block.getFieldValue('TEXT') || "";
+
   const code = `${function_name}()`;
   return [code, Order.ATOMIC];
 }
