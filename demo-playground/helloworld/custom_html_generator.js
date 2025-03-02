@@ -179,6 +179,8 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   };
   const eventType = eventMap[eventName] || 'click';
 
+  const eventHandler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
+
   // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   // if (nextBlock) {
   //   // Recursively generate code for the next block
