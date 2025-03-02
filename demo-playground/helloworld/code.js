@@ -503,15 +503,16 @@ Code.init = function() {
   }
   
 
-  const savedBlocks = `<xml xmlns="https://developers.google.com/blockly/xml">
+  const savedBlocks = `
+  <xml xmlns="https://developers.google.com/blockly/xml">
   <block type="elements_element_textcontent" id="Z_e_M4NRjUaL_Q_bB1" x="163" y="38">
     <field name="TAG">button</field>
     <field name="TEXT">Double Click?</field>
     <statement name="STATEMENT">
       <block type="elements_on" id="ki_B_EqyuUbM6_p_f_R">
-        <field name="FIELDNAME">dblclick</field>
-        <value name="VALUE">
-          <block type="functions_call" id="Rlh_77_Srsr_BwJ__$">
+        <field name="FIELDNAME">ITEM1</field>
+        <value name="EVENTHANDLER">
+          <block type="functions_call" id="M,gO/tW#^+:yZW;;sA|V">
             <field name="TEXT">joke</field>
           </block>
         </value>
@@ -545,7 +546,7 @@ Code.init = function() {
       </block>
     </next>
   </block>
-  </xml>
+</xml>
 `;
 
 Code.loadBlocks(savedBlocks);
