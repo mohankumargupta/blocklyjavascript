@@ -102,7 +102,7 @@ Blockly.common.defineBlocksWithJsonArray([
             },
             {
                 "type": "input_value",
-                "name": "TEXT",
+                "name": "EVENTHANDLER",
             }
         ],
         "inputsInline": true,

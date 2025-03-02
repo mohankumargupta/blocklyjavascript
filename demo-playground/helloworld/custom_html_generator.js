@@ -181,10 +181,36 @@ htmlGenerator.forBlock['functions_call'] = function(block, generator) {
   return code;
 }
 
+/*
+Blockly.JavaScript['elements_on'] = function(block) {
+  // Get the selected event type from the dropdown
+  const eventName = block.getFieldValue('FIELDNAME'); // "ITEM1" (click) or "ITEM2" (double click)
+  
+  // Generate code for the input value (the "do" part)
+  const actionCode = Blockly.JavaScript.valueToCode(
+    block, 
+    'TEXT', 
+    Blockly.JavaScript.ORDER_ATOMIC
+  ) || 'null'; // Default to 'null' if no input is provided
+
+  // Map ITEM1/ITEM2 to actual event names
+  const eventMap = {
+    'ITEM1': 'click',
+    'ITEM2': 'dblclick' // Use standard DOM event names
+  };
+  const eventType = eventMap[eventName] || 'click';
+
+  // Generate the final JavaScript code
+  const code = `element.addEventListener('${eventType}', function() {\n  ${actionCode}\n});\n`;
+  
+  return code;
+};
+*/
+
 htmlGenerator.forBlock['elements_on'] = function(block, generator) {
   const event = block.getFieldValue('FIELDNAME') || "";
-  let event_js = event;
-  const code = `on${event_js}="`;
+  const handler = generator.valueToCode(block, 'EVENTHANDLER', Order.ATOMIC) || "";
+  const code = `on${event}="${handler}"`;
   return code;
 }
 
