@@ -183,10 +183,12 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   const attributes = inputString.split(/\s+/);
   
   const processedAttributes = attributes.map(attr => {
-      const newattr = attr.trimStart();
-      const match = newattr.match(/^on(\w+)="([^"]+)"$/);
+      if (attr === '') {
+        return '';
+      }
+      const match = attr.match(/^on(\w+)="([^"]+)"$/);
       if (!match) {
-        throw new Error(`Invalid attribute format: ${newattr}`);
+        throw new Error(`Invalid attribute format: ${attr}`);
       }
     
       const eventKey = match[1]; 
