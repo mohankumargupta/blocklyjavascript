@@ -368,7 +368,7 @@ Code.renderContent = function() {
   } else if (content.id === 'content_html_fragment') {
     Code.attemptCodeGeneration(htmlGenerator);
   } else if (content.id === 'content_preview') {
-    Code.attemptCodeGeneration(htmlGenerator);
+    Code.previewHTML(htmlGenerator);
   }
 
   if (typeof PR === 'object') {
@@ -388,6 +388,20 @@ Code.attemptCodeGeneration = function(generator) {
     content.textContent = code;
     // Remove the 'prettyprinted' class, so that Prettify will recalculate.
     content.className = content.className.replace('prettyprinted', '');
+  }
+};
+
+Code.previewHTML = function(generator) {
+  //var content = document.getElementById('content_' + Code.selected);
+  //content.textContent = '';
+
+  if (Code.checkAllGeneratorFunctionsDefined(generator)) {
+    var code = generator.workspaceToCode(Code.workspace);
+    const iframe = document.getElementById("previewIframe");
+    iframe.srcDoc = code;
+    //content.textContent = code;
+    // Remove the 'prettyprinted' class, so that Prettify will recalculate.
+    //content.className = content.className.replace('prettyprinted', '');
   }
 };
 
