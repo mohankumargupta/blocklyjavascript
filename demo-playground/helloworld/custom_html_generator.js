@@ -164,13 +164,27 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   const tag = block.getFieldValue('TAG') || "";
   const textContent = block.getFieldValue('TEXT') || "";
   let code = `<${tag}>${textContent}</${tag}>\n`;
-  
-  const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-  if (nextBlock) {
-    // Recursively generate code for the next block
-    const nextCode = generator.blockToCode(nextBlock);
-    code += nextCode; // Append the generated code for the next block
-  }
+
+    // Generate code for the input value (the "do" part)
+  const actionCode = generator.valueToCode(
+    block, 
+    'TEXT', 
+    Order.ATOMIC
+  ) || 'null'; // Default to 'null' if no input is provided
+
+  // Map ITEM1/ITEM2 to actual event names
+  const eventMap = {
+    'ITEM1': 'click',
+    'ITEM2': 'dblclick' // Use standard DOM event names
+  };
+  const eventType = eventMap[eventName] || 'click';
+
+  // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+  // if (nextBlock) {
+  //   // Recursively generate code for the next block
+  //   const nextCode = generator.blockToCode(nextBlock);
+  //   code += nextCode; // Append the generated code for the next block
+  // }
   
   return code;
 }
