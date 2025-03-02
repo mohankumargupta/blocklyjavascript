@@ -162,8 +162,8 @@ htmlGenerator.forBlock['functions_def'] = function(block, generator) {
 
 htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generator) {
   const tag = block.getFieldValue('TAG') || "";
-  const textContent = block.getFieldValue('TEXT') || "";
-  let code = `<${tag}>${textContent}</${tag}>\n`;
+  const eventName = block.getFieldValue('TEXT') || "";
+  let code = `<${tag}>${eventName}</${tag}>\n`;
 
     // Generate code for the input value (the "do" part)
   const actionCode = generator.valueToCode(
