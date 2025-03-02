@@ -208,12 +208,12 @@ const result = processedAttributes.join(' ');
   
   let code = `<${tag} ${result}>${textContent}</${tag}>\n`;
     
-  // const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-  // if (nextBlock) {
-    //   // Recursively generate code for the next block
-    //   const nextCode = generator.blockToCode(nextBlock);
-    //   code += nextCode; // Append the generated code for the next block
-    // }
+  const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+  if (nextBlock) {
+      // Recursively generate code for the next block
+      const nextCode = generator.blockToCode(nextBlock);
+      code += nextCode; // Append the generated code for the next block
+    }
     
   return code;
 }
