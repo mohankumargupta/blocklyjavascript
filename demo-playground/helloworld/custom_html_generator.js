@@ -183,7 +183,6 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   const attributes = inputString.split(/\s+/).trimStart();
   
   const processedAttributes = attributes.map(attr => {
-    const processedAttributes = attributes.map(attr => {
       const match = attr.match(/^on(\w+)="([^"]+)"$/);
       if (!match) {
         throw new Error(`Invalid attribute format: ${attr}`);
@@ -200,8 +199,7 @@ htmlGenerator.forBlock['elements_element_textcontent'] = function(block, generat
   
   return `on${domEventName}="${functionCall}"`;
     });
-});
-
+    
 // Step 3: Join the processed attributes back into a single string
 const result = processedAttributes.join(' ');
   
