@@ -9,7 +9,16 @@
       files: {
         'index.js': text,
         'index.html': '<html><body><script src="./index.js"></script></body></html>'
-      }
+      },
+      template: 'javascript',
+      description: 'Live',
+      title: 'Live',
+
+    }, {
+      openFile: 'index.html',
+      showSidebar: false,
+      zenMode: true,
+      devToolsHeight: 50,
     });
   });
   
