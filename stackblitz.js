@@ -7,7 +7,7 @@
   fetch(`https://raw.githubusercontent.com/mohankumargupta/blocklyjavascript/refs/heads/main/stackblitz/${folderName}/index.js`)
   .then(response => response.text())
   .then(text => {
-    indexjs = text;
+    indexJS = text;
     return fetch(`https://raw.githubusercontent.com/mohankumargupta/blocklyjavascript/refs/heads/main/stackblitz/${folderName}/index.html`);
   })
   .then( response => response.text())
