@@ -32,7 +32,7 @@
       openFile: 'index.css,index.js,index.html',
       showSidebar: false,
       zenMode: true,
-      devToolsHeight: 30,
+      devToolsHeight: 20,
     });
   });
   
