@@ -15,7 +15,7 @@
       title: 'Live',
 
     }, {
-      openFile: 'index.html',
+      openFile: 'index.js,index.html',
       showSidebar: false,
       zenMode: true,
       devToolsHeight: 50,
