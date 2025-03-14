@@ -48,7 +48,7 @@
       openFile: openFiles(),
       showSidebar: false,
       zenMode: true,
-      devToolsHeight: 20,
+      devToolsHeight: 30,
     });
   });
   
