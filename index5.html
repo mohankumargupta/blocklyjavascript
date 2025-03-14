@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
+    <script src="stackblitz.js"></script>
     <style>
-        main {
+        section {
             display: flex;
             align-content: flex-start;
             align-items: flex-start;
@@ -109,7 +111,7 @@
 </head>
 <body>
     <h1>Javascript Live Lessons</h1>
-    <main>
+    <section>
         <a href="#" class="card-link">
             <article class="card">
                 <header>
@@ -121,7 +123,7 @@
                 </div>
             </article>
         </a>
-        <a href="#" class="card-link">
+        <a onclick="openStackBlitz('if-else')" target="_blank" class="card-link">
             <article class="card">
                 <header>
                     <h1>Conditionals</h1>
@@ -155,6 +157,18 @@
                 </div>
             </article>
         </a>
+        <a href="https://www.w3schools.com/js/js_htmldom.asp" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>But really, what is DOM?</p>
+                    <p class="author">Makes global variables provided by your browser available to javascript</p>
+                </div>
+            </article>
+        </a>
+
         <a href="#" class="card-link">
             <article class="card">
                 <header>
@@ -169,15 +183,23 @@
         <a href="#" class="card-link">
             <article class="card">
                 <header>
-                    <h1>Article Title</h1>
+                    <h1>DOM</h1>
                 </header>
                 <div class="card-content">
-                    <p>This is a brief summary or description of the article. It should be concise and engaging, giving the reader a good idea of what the article is about.</p>
-                    <p class="author">By John Doe</p>
+                    <p>Change HTML attribute on a page</p>
+                    <p class="author">like the src attribute on img maybe?</p>
                 </div>
-                <footer>
-                    <a href="#">Read More</a>
-                </footer>
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>React to any HTML event on the page</p>
+                    <p class="author">addEventListener</p>
+                </div>
             </article>
         </a>
         <a href="#" class="card-link">
@@ -194,20 +216,7 @@
                 </footer>
             </article>
         </a>
-        <a href="#" class="card-link">
-            <article class="card">
-                <header>
-                    <h1>Article Title</h1>
-                </header>
-                <div class="card-content">
-                    <p>This is a brief summary or description of the article. It should be concise and engaging, giving the reader a good idea of what the article is about.</p>
-                    <p class="author">By John Doe</p>
-                </div>
-                <footer>
-                    <a href="#">Read More</a>
-                </footer>
-            </article>
-        </a>
-    </main>
+    </section>
+
 </body>
 </html>
