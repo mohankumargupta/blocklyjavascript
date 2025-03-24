@@ -3,161 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockly javascript examples</title>
+    <title>Javascript Lessons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
     <script src="stackblitz.js"></script>
-    <script>
-        // StackBlitzSDK.embedProject(/* … */);
-        
-    </script>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Styling */
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(135deg, #f9f9f9, #eaeaea);
-            color: #444;
+        section {
             display: flex;
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 48px;
+            height: min-content;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow-x: hidden;
+            min-width: 390px;
+            padding: 0 60px;
+            width: 100%;
         }
 
-        /* Container Styling */
-        .container {
-            background: #ffffff;
-            max-width: 600px;
-            width: 95%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .card-link {
+            text-decoration: none; /* Remove underline from the link */
+            color: inherit; /* Inherit text color from parent */
+            display: block; /* Make the link fill the entire card */
         }
 
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+
+        .card {
+            width: 300px; /* Adjust as needed */
+            height: 250px; /* Fixed height */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /*  Important to hide content that overflows the fixed height */
+            background-color: #f9f9f9; /* Light background */
+            font-family: sans-serif;
+            margin: 20px;
+            border: 1px solid #eee; /* Light border */
+            display: flex;        /* Use flexbox to control content distribution within the fixed height */
+            flex-direction: column; /* Stack header, content, and footer vertically */
+            transition: transform 0.2s ease-in-out; /* Add a smooth transition */
         }
 
-        /* Heading Styling */
+        .card:hover {
+            transform: scale(1.03); /* Slightly enlarge on hover */
+        }
+
+        header {
+            background-color: #fff; /* White header */
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
         h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #6c5ce7;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
+            font-family: "Instrument Sans", sans-serif;
+            text-align: center;
         }
 
-        h3 {
-            text-align: left;
+        .card-content p {
+            text-align: center;
         }
 
-        /* Subheading Styling */
-        .subtext {
-            font-size: 1rem;
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        header h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333; /* Darker title text */
         }
 
-        /* List Styling */
-        ul {
-            list-style: none;
-            padding: 0;
+        .card-content {
+            padding: 16px;
+            color: #555; /* Slightly darker body text */
+            flex-grow: 1;      /* Allow the content to take up available space */
+            overflow: hidden; /* Important to hide overflowing content */
         }
 
-        li {
-            margin: 1rem 0;
+        .card-content .author {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
         }
 
-        /* Card-like Link Styling */
-        a {
-            display: block;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #fff;
-            background: linear-gradient(135deg, #ff7979, #ff5c5c);
-            padding: 18px 24px;
-            border-radius: 15px; /* Rounded corners for a softer look */
-            box-shadow: 0 6px 12px rgba(255, 121, 121, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            text-align: left; /* Align text to the left for a card-like feel */
-            position: relative;
-            overflow: hidden;
+        footer {
+            padding: 16px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            text-align: right;
         }
 
-        a:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(255, 121, 121, 0.4);
-            background: linear-gradient(135deg, #ff5c5c, #ff7979); /* Swap gradient colors on hover */
-        }
-
-        /* Icon Inside Links */
-        a::before {
-            content: '';
+        footer a {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: #ffeaa7;
-            border-radius: 50%;
-            margin-right: 10px;
-            vertical-align: middle;
+            padding: 8px 12px;
+            background-color: transparent;
+            color: #007bff; /* Primary color for link */
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #007bff; /* Add a subtle border */
+            font-size: 0.9rem;
         }
 
-        /* Hover Effect for Icons */
-        a:hover::before {
-            background: #ffdf7e; /* Slightly lighter yellow on hover */
-        }
-
-        /* Accessibility Focus State */
-        a:focus {
-            outline: 2px solid #ffdf7e;
-            outline-offset: 4px;
+        footer a:hover {
+            background-color: #e1f0ff; /* Lighter background on hover */
         }
     </style>
+
 </head>
 <body>
-    <div class="container">
+    <h1>Javascript Live Lessons</h1>
+    <section>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>HTML Important Bits</h1>
+                </header>
+                <div class="card-content">
+                    <p>Required for DOM and javascript</p>
+                    <p class="author">Elements,tags,important attributes for javascript</p>
+                </div>
+            </article>
+        </a>
 
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>Change HTML element on a page</p>
+                    <p class="author">use querySelector and textContent</p>
+                </div>
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>Change HTML attribute on a page</p>
+                    <p class="author">like the src attribute on img maybe?</p>
+                </div>
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>React to any HTML event on the page</p>
+                    <p class="author">addEventListener</p>
+                </div>
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>Conditionals</h1>
+                </header>
+                <div class="card-content">
+                    <p>if statement</p>
+                    <p class="author">You think you know ifs, but you don't - google programming truthy falsy</p>
+                </div>
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>Conditionals</h1>
+                </header>
+                <div class="card-content">
+                    <p>if...else</p>
+                    <p class="author">Start simple</p>
+                </div>
+            </article>
+        </a>
+        <a onclick="openStackBlitz('if-else', false, false, true)" target="_blank" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>Conditionals</h1>
+                </header>
+                <div class="card-content">
+                    <p>if...else if...else</p>
+                    <p class="author">Treat it like one block of code</p>
+                </div>
 
+            </article>
+        </a>
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>Conditionals</h1>
+                </header>
+                <div class="card-content">
+                    <p>if...else if...else if...else</p>
+                    <p class="author">Multiple else if conditions</p>
+                </div>
+            </article>
+        </a>
+        <a href="https://www.w3schools.com/js/js_htmldom.asp" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>What is DOM?</p>
+                    <p class="author">Give Javascript access to HTML document</p>
+                </div>
+            </article>
+        </a>
+        <a href="https://www.w3schools.com/js/js_htmldom.asp" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>DOM</h1>
+                </header>
+                <div class="card-content">
+                    <p>But really, what is DOM?</p>
+                    <p class="author">Makes global variables provided by your browser available to javascript</p>
+                </div>
+            </article>
+        </a>        
+        <a href="#" class="card-link">
+            <article class="card">
+                <header>
+                    <h1>Article Title</h1>
+                </header>
+                <div class="card-content">
+                    <p>This is a brief summary or description of the article. It should be concise and engaging, giving the reader a good idea of what the article is about.</p>
+                    <p class="author">By John Doe</p>
+                </div>
+                <footer>
+                    <a href="#">Read More</a>
+                </footer>
+            </article>
+        </a>
+    </section>
 
-        <h1>Blockly javascript</h1>
-        <p class="subtext">Learn javascript through Blockly.</p>
-      
-        <h3>Introduction to javascript</h3>
-        <ul>
-          <li><a target="_blank" href="/blocklyjavascript/slides/01-online-resources">Online resources</a></li>
-        </ul>
-        <ul>
-          <li><a target="_blank" href="/blocklyjavascript/slides/02-functions">Functions</a></li>
-        </ul>
-        <ul>
-          <li><a target="_blank" href="/blocklyjavascript/slides/03-javasscript-dom" href="">JavaScript & DOM</a></li>
-        </ul>                
-        <h3>Blockly Playgrounds</h3>
-        <ul>
-            <li><a href="https://mohankumargupta.github.io/quasarhelloworld" target="_blank">Blockly javascript</a></li>
-          </ul>
-        <ul>
-          <li><a href="/blocklyjavascript/demo" target="_blank">Demo playground multiple languages</a></li>
-        </ul>
-
-
-        <h1>Live Examples</h1>
-        <p class="subtext">Can edit live code</p>
-        <h3>Conditionals</h3>
-        <ul>
-         <li><a onclick="openStackBlitz('if-else')" target="_blank">If else</a></li>
-        </ul>
-
-    </div>
 </body>
 </html>

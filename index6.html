@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly javascript examples</title>
+    <script src="https://unpkg.com/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
+    <script src="stackblitz.js"></script>
+    <script>
+        // StackBlitzSDK.embedProject(/* … */);
+        
+    </script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+            color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Container Styling */
+        .container {
+            background: #ffffff;
+            max-width: 600px;
+            width: 95%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6c5ce7;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        /* Subheading Styling */
+        .subtext {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        /* Card-like Link Styling */
+        a {
+            display: block;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background: linear-gradient(135deg, #ff7979, #ff5c5c);
+            padding: 18px 24px;
+            border-radius: 15px; /* Rounded corners for a softer look */
+            box-shadow: 0 6px 12px rgba(255, 121, 121, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            text-align: left; /* Align text to the left for a card-like feel */
+            position: relative;
+            overflow: hidden;
+        }
+
+        a:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(255, 121, 121, 0.4);
+            background: linear-gradient(135deg, #ff5c5c, #ff7979); /* Swap gradient colors on hover */
+        }
+
+        /* Icon Inside Links */
+        a::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ffeaa7;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Hover Effect for Icons */
+        a:hover::before {
+            background: #ffdf7e; /* Slightly lighter yellow on hover */
+        }
+
+        /* Accessibility Focus State */
+        a:focus {
+            outline: 2px solid #ffdf7e;
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+
+        <h1>Blockly javascript</h1>
+        <p class="subtext">Learn javascript through Blockly.</p>
+      
+        <h3>Introduction to javascript</h3>
+        <ul>
+          <li><a target="_blank" href="/blocklyjavascript/slides/01-online-resources">Online resources</a></li>
+        </ul>
+        <ul>
+          <li><a target="_blank" href="/blocklyjavascript/slides/02-functions">Functions</a></li>
+        </ul>
+        <ul>
+          <li><a target="_blank" href="/blocklyjavascript/slides/03-javasscript-dom" href="">JavaScript & DOM</a></li>
+        </ul>                
+        <h3>Blockly Playgrounds</h3>
+        <ul>
+            <li><a href="https://mohankumargupta.github.io/quasarhelloworld" target="_blank">Blockly javascript</a></li>
+          </ul>
+        <ul>
+          <li><a href="/blocklyjavascript/demo" target="_blank">Demo playground multiple languages</a></li>
+        </ul>
+
+
+        <h1>Live Examples</h1>
+        <p class="subtext">Can edit live code</p>
+        <h3>Conditionals</h3>
+        <ul>
+         <li><a onclick="openStackBlitz('if-else')" target="_blank">If else</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
