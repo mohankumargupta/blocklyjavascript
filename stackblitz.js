@@ -7,7 +7,7 @@
   function openFiles() {
     let openFiles = [];
     if (showIndexCSS) {
-      openFiles.push('index.css');
+      openFiles.push('style.css');
     } 
     if (showIndexJS) {
       openFiles.push('index.js');
@@ -28,7 +28,7 @@
   .then( response => response.text())
   .then(text => {
     indexHTML = text;
-    return fetch(`https://raw.githubusercontent.com/mohankumargupta/blocklyjavascript/refs/heads/main/stackblitz/${folderName}/index.css`);
+    return fetch(`https://raw.githubusercontent.com/mohankumargupta/blocklyjavascript/refs/heads/main/stackblitz/${folderName}/style.css`);
   })
   .then( response => response.text())
   .then(text => {
@@ -38,7 +38,7 @@
       files: {
         'index.js': indexJS,
         'index.html': indexHTML,
-        'index.css': indexCSS,
+        'style.css': indexCSS,
       },
       template: 'javascript',
       description: 'Live',
