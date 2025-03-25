@@ -1,203 +1,208 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discourse Markers</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-      }
-
-      .container {
-        max-width: 720px;
-        margin: 20px auto;
-        background-color: #fff;
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .title {
-        background-color: #d22f30;
-        color: #fff;
-        padding: 15px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        letter-spacing: 0.5px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(
-          3,
-          1fr
-        ); /* Creates 3 equal columns [[4]][[8]] */
-        gap: 10px; /* Adds spacing between items [[9]] */
-        padding: 10px;
-      }
-
-      /* Media query for smaller screens */
-      @media (max-width: 600px) {
-        .grid {
-          grid-template-columns: 1fr; /* Stack items vertically [[6]] */
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Discourse Markers</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
         }
+
+        .container {
+            max-width: 720px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         .title {
-          font-size: 24px;
+            background-color: #d22f30;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
-      }
 
-      .grid-item {
-        padding: 0;
-        box-sizing: border-box;
-        border-bottom: 1px solid white;
-        padding-bottom: 1px;
-      }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+            3,
+            1fr
+            ); /* Creates 3 equal columns [[4]][[8]] */
+            gap: 10px; /* Adds spacing between items [[9]] */
+            padding: 10px;
+        }
 
-      .category-header {
-        font-weight: bold;
-        text-align: center;
-        font-size: 15px;
-        color: #fff;
-        padding: 7px 10px;
-      }
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .grid {
+            grid-template-columns: 1fr; /* Stack items vertically [[6]] */
+            }
+            .title {
+            font-size: 24px;
+            }
+        }
 
-      .category-content {
-        padding: 10px;
-        font-size: 13px;
-        line-height: 1.5;
-        background-color: peachpuff;
-        margin: 0;
-      }
+        .grid-item {
+            padding: 0;
+            box-sizing: border-box;
+            /*border-bottom: 1px solid white;
+            padding-bottom: 1px;*/
+            display: flex;
+            flex-direction: column;
+        }
 
-      /* Specific styles for each category */
-      .adding {
-        background-color: #9430c0;
-      }
-      .cause-effect {
-        background-color: #d22f30;
-      }
-      .sequencing {
-        background-color: #549c50;
-      }
-      .comparing {
-        background-color: #4a86e8;
-      }
-      .contrasting {
-        background-color: #966133;
-      }
-      .examples {
-        background-color: #4a4a4a;
-      }
-      .emphasizing {
-        background-color: #509c51;
-      }
-      .generalizing {
-        background-color: #b82a2d;
-      }
-      .time {
-        background-color: #673ab7;
-      }
+        .category-header {
+            font-weight: bold;
+            text-align: center;
+            font-size: 15px;
+            color: #fff;
+            padding: 7px 10px;
+        }
 
-      .footer {
-        text-align: center;
-        padding: 10px;
-        color: #666;
-        font-size: 12px;
-        border-top: 1px solid #eee;
-      }
+        .category-content {
+            padding: 10px;
+            font-size: 13px;
+            line-height: 1.5;
+            background-color: peachpuff;
+            margin: 0;
+            
+            flex: 1;
+            
+        }
 
-      .footer a {
-        color: #007bff;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="title">Discourse Markers</div>
-      <div class="grid">
-        <div class="grid-item adding">
-          <div class="category-header">For adding</div>
-          <div class="category-content">
-            also moreover,<br />
-            furthermore,<br />
-            additionally, besides,<br />
-            in addition
-          </div>
+        /* Specific styles for each category */
+        .adding {
+            background-color: #9430c0;
+        }
+        .cause-effect {
+            background-color: #d22f30;
+        }
+        .sequencing {
+            background-color: #549c50;
+        }
+        .comparing {
+            background-color: #4a86e8;
+        }
+        .contrasting {
+            background-color: #966133;
+        }
+        .examples {
+            background-color: #4a4a4a;
+        }
+        .emphasizing {
+            background-color: #509c51;
+        }
+        .generalizing {
+            background-color: #b82a2d;
+        }
+        .time {
+            background-color: #673ab7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="title">Discourse Markers</div>
+        <div class="grid">
+            <div class="grid-item adding">
+            <div class="category-header">For adding</div>
+            <div class="category-content">
+                also moreover,<br />
+                furthermore,<br />
+                additionally, besides,<br />
+                in addition
+            </div>
+            </div>
+
+            <div class="grid-item cause-effect">
+            <div class="category-header">For showing cause and effect</div>
+            <div class="category-content">
+                therefore, thus,<br />
+                consequently, hence,<br />
+                as a result
+            </div>
+            </div>
+
+            <div class="grid-item sequencing">
+            <div class="category-header">For sequencing</div>
+            <div class="category-content">
+                firstly, at first, first of all, in the first place, to begin with,
+                in the beginning, once upon a time, secondly, thirdly, subsequently,
+                earlier, meanwhile, later, afterwards
+            </div>
+            </div>
+
+            <div class="grid-item comparing">
+            <div class="category-header">For comparing</div>
+            <div class="category-content">
+                similarly, likewise, in<br />
+                the same way
+            </div>
+            </div>
+
+            <div class="grid-item contrasting">
+            <div class="category-header">For contrasting</div>
+            <div class="category-content">
+                however, although,<br />
+                whereas, despite this fact, on one hand, on the other hand, on the
+                contrary, still, nonetheless, instead, alternatively, in contrast
+            </div>
+            </div>
+
+            <div class="grid-item examples">
+            <div class="category-header">For giving examples</div>
+            <div class="category-content">
+                for example, for instance, such as,<br />
+                namely, in other words
+            </div>
+            </div>
+
+            <div class="grid-item emphasizing">
+            <div class="category-header">For emphasizing</div>
+            <div class="category-content">
+                in conclusion, finally,<br />
+                to sum it up, in the end, lastly, in short,<br />
+                eventually
+            </div>
+            </div>
+
+            <div class="grid-item generalizing">
+            <div class="category-header">For generalizing</div>
+            <div class="category-content">
+                on the whole, in general, broadly speaking, as a rule, in most cases
+            </div>
+            </div>
+
+            <div class="grid-item time">
+            <div class="category-header">For indicating time</div>
+            <div class="category-content">
+                in the past, not so<br />
+                long ago, recently
+            </div>
+            </div>
         </div>
-
-        <div class="grid-item cause-effect">
-          <div class="category-header">For showing cause and effect</div>
-          <div class="category-content">
-            therefore, thus,<br />
-            consequently, hence,<br />
-            as a result
-          </div>
         </div>
-
-        <div class="grid-item sequencing">
-          <div class="category-header">For sequencing</div>
-          <div class="category-content">
-            firstly, at first, first of all, in the first place, to begin with,
-            in the beginning, once upon a time, secondly, thirdly, subsequently,
-            earlier, meanwhile, later, afterwards
-          </div>
-        </div>
-
-        <div class="grid-item comparing">
-          <div class="category-header">For comparing</div>
-          <div class="category-content">
-            similarly, likewise, in<br />
-            the same way
-          </div>
-        </div>
-
-        <div class="grid-item contrasting">
-          <div class="category-header">For contrasting</div>
-          <div class="category-content">
-            however, although,<br />
-            whereas, despite this fact, on one hand, on the other hand, on the
-            contrary, still, nonetheless, instead, alternatively, in contrast
-          </div>
-        </div>
-
-        <div class="grid-item examples">
-          <div class="category-header">For giving examples</div>
-          <div class="category-content">
-            for example, for instance, such as,<br />
-            namely, in other words
-          </div>
-        </div>
-
-        <div class="grid-item emphasizing">
-          <div class="category-header">For emphasizing</div>
-          <div class="category-content">
-            in conclusion, finally,<br />
-            to sum it up, in the end, lastly, in short,<br />
-            eventually
-          </div>
-        </div>
-
-        <div class="grid-item generalizing">
-          <div class="category-header">For generalizing</div>
-          <div class="category-content">
-            on the whole, in general, broadly speaking, as a rule, in most cases
-          </div>
-        </div>
-
-        <div class="grid-item time">
-          <div class="category-header">For indicating time</div>
-          <div class="category-content">
-            in the past, not so<br />
-            long ago, recently
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+    </html>
