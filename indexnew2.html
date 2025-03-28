@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Resources for a beginner JavaScript course using Blockly, including examples, fundamentals, and slides.">
+    <!-- Favicon Link (replace 'favicon.ico' with your actual file) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>JavaScript Beginner Course with Blockly</title>
+
+    <style>
+        /* Basic Reset & Defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Refined font stack */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Darker base text */
+            padding: 20px;
+            font-size: 16px; /* Slightly larger base font size */
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            color: #0056b3;
+            margin-bottom: 0.25em;
+        }
+
+        header p {
+            color: #555; /* Medium-dark grey */
+            font-size: 1.1em;
+        }
+
+        /* Main Content Area */
+        main {
+            max-width: 1100px;
+            margin: 0 auto; /* Center content */
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            margin-bottom: 35px; /* Increased spacing */
+            color: #495057;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Card Container - Using Flexbox */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px; /* Space between cards */
+            padding: 10px;
+        }
+
+        /* Individual Card Styling - POST-IT NOTE STYLE */
+        .card {
+            display: block;
+            padding: 20px;
+            text-decoration: none; /* Remove underline from link */
+            color: #333; /* Dark text for contrast */
+            /* Softer default shadow */
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            /* Flex properties */
+            flex-grow: 1;
+            flex-basis: 220px; /* Base width */
+            min-width: 180px; /* Minimum width */
+
+            border: none; /* No border */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtle bottom edge */
+            border-right: 1px solid rgba(0, 0, 0, 0.05); /* Subtle right edge */
+            border-radius: 3px; /* Slight rounding */
+        }
+
+        /* === Apply Different Post-it Colors === */
+        :root {
+            --postit-yellow: #FFFFE0;
+            --postit-pink:   #FFDDF4;
+            --postit-blue:   #D9EFFF;
+            --postit-green:  #E0FFE0;
+        }
+
+        /* Cycle through the 4 colors */
+        .card:nth-child(4n+1) { background-color: var(--postit-yellow); }
+        .card:nth-child(4n+2) { background-color: var(--postit-pink); }
+        .card:nth-child(4n+3) { background-color: var(--postit-blue); }
+        .card:nth-child(4n+4) { background-color: var(--postit-green); }
+
+
+        /* === Hover Effect === */
+        .card:hover {
+            transform: translateY(-6px) scale(1.03); /* Lift and scale */
+            /* Stronger hover shadow */
+            box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            position: relative; /* Needed for z-index */
+        }
+
+        /* === Accessibility: Focus Indicator === */
+        /* Remove default outline for mouse users (optional) */
+         .card:focus {
+            outline: none;
+        }
+        /* Style focus only for keyboard users (or users needing visible focus) */
+        .card:focus-visible {
+           outline: 3px solid #0056b3; /* Clear blue outline */
+           outline-offset: 3px; /* Space between card and outline */
+           box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2); /* Optional: mimic hover shadow */
+           z-index: 11; /* Ensure focus is above hover */
+           position: relative;
+        }
+
+
+        .card h4 {
+            color: #0056b3; /* Blue title color */
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .card p {
+            font-size: 0.95em; /* Relative to body font size */
+            color: #444; /* Slightly lighter than base text */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666; /* Lighter grey for footer */
+        }
+
+        /* === Responsive Adjustments === */
+        @media (max-width: 500px) {
+            body {
+                padding: 15px; /* Reduce padding on small screens */
+            }
+            .card-container {
+                gap: 15px; /* Reduce gap */
+            }
+            .card {
+                /* Optional: Force one card per row on very small screens */
+                /* flex-basis: 100%; */
+                /* min-width: unset; */
+            }
+            header h1 {
+                font-size: 1.8em; /* Slightly smaller heading */
+            }
+             section h2 {
+                 font-size: 1.4em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JavaScript Beginner Course with Blockly</h1>
+        <p>Curated resources to help you learn</p>
+    </header>
+
+    <main>
+        <!-- Section 1: Blockly Playground Examples -->
+        <section id="blockly-examples">
+            <h2>Blockly Playground Examples</h2>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Basic Movement</h4>
+                    <p>Learn how to make things move using simple blocks.</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Loops & Conditions</h4>
+                    <p>Explore repeating actions and making decisions.</p>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Variables</h4>
+                    <p>Understand how to store and reuse information.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <!-- Section 2: HTML/JavaScript Fundamentals -->
+        <section id="fundamentals">
+            <h2>HTML/JavaScript Fundamentals</h2>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" class="card">
+                    <h4>What is HTML?</h4>
+                    <p>An introduction to the structure of web pages.</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank" class="card">
+                    <h4>Intro to JavaScript</h4>
+                    <p>Understanding variables, data types, and basic syntax.</p>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" class="card">
+                    <h4>DOM Manipulation</h4>
+                    <p>How JavaScript interacts with HTML elements.</p>
+                </a>
+                 <!-- Card 4 -->
+                <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" class="card">
+                    <h4>Functions</h4>
+                    <p>Writing reusable blocks of code.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <!-- Section 3: Slides -->
+        <section id="slides">
+            <h2>Slides</h2>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="YOUR_SLIDES_LINK_1" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Week 1: Introduction</h4>
+                    <p>Course overview, setup, and first Blockly steps.</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="YOUR_SLIDES_LINK_2" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Week 2: Core Concepts</h4>
+                    <p>Deep dive into loops, conditions, and variables.</p>
+                </a>
+                 <!-- Card 3 -->
+                <a href="YOUR_SLIDES_LINK_3" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Week 3: HTML & JS Basics</h4>
+                    <p>Connecting Blockly concepts to text-based coding.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Updated footer text from your site -->
+        <p>© 2023 Mohan Kumar Gupta</p>
+    </footer>
+
+</body>
+</html>
