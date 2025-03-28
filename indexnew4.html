@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fun and friendly resources for a beginner JavaScript course using Blockly.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>JS Adventures with Blockly!</title>
+
+    <!-- Import a friendly font (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Define Fun Color Palette */
+        :root {
+            --bg-light: #f8f9fa;        /* Very light grey background */
+            --bg-card: #ffffff;         /* White card background */
+            --text-dark: #343a40;       /* Dark grey text (not black) */
+            --text-medium: #6c757d;      /* Medium grey for secondary text */
+            --shadow-color: rgba(0, 0, 0, 0.08); /* Softer shadow color */
+
+            /* Fun Accent Colors */
+            --accent-coral: #ff7f50;
+            --accent-teal: #20c997;
+            --accent-gold: #ffc107;
+            --accent-purple: #9d6ff8; /* A friendly purple */
+
+            /* Array of accents for cycling */
+            --accents: var(--accent-coral), var(--accent-teal), var(--accent-gold), var(--accent-purple);
+        }
+
+        /* Basic Reset & Defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 25px;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            /* Cycle through accent colors for the main title maybe? */
+             /* Example: using one accent */
+            color: var(--accent-teal);
+            margin-bottom: 0.35em;
+            font-weight: 700;
+            font-size: 2.4em;
+            letter-spacing: -0.5px; /* Slightly tighter spacing */
+        }
+
+        header p {
+            color: var(--text-medium);
+            font-size: 1.15em;
+            font-weight: 300;
+        }
+
+        /* Main Content Area */
+        main {
+            max-width: 1150px; /* Adjust max-width if needed */
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            margin-bottom: 35px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.7em;
+            /* Fun underline style */
+            display: inline-block; /* Make it fit content */
+            padding-bottom: 8px;
+            position: relative; /* For pseudo-element */
+        }
+        /* Add a fun underline using a pseudo-element */
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%; /* Underline part of the title */
+            height: 4px;
+            border-radius: 2px; /* Rounded underline */
+             /* Cycle colors for section underlines? - Example uses one */
+            background-color: var(--accent-gold);
+        }
+        /* Optional: Cycle section underline colors */
+         #blockly-examples h2::after { background-color: var(--accent-coral); }
+         #fundamentals h2::after { background-color: var(--accent-teal); }
+         #slides h2::after { background-color: var(--accent-purple); }
+
+
+        /* Card Container - Using Flexbox */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px; /* Adjust gap */
+        }
+
+        /* Individual Card Styling - LIGHT & FUN */
+        .card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid #e9ecef; /* Very light border */
+            border-radius: 12px; /* More rounded corners */
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            /* Soft shadow */
+            box-shadow: 0 4px 10px var(--shadow-color);
+            /* Smooth transition */
+            transition: transform 0.25s ease-out,
+                        box-shadow 0.25s ease-out,
+                        border-color 0.25s ease;
+
+            /* Flex properties */
+            flex-grow: 1;
+            flex-basis: 270px; /* Adjust base width */
+            min-width: 240px;
+        }
+
+        /* === Hover & Focus Effect === */
+        .card:hover,
+        .card:focus-visible {
+            transform: translateY(-7px) /*rotate(1deg)*/; /* Lift slightly, optional subtle tilt */
+            /* Slightly stronger but still soft shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+             /* Highlight border with a fun color - let's cycle! */
+            /* border-color: var(--accent-teal); */ /* Static example */
+            z-index: 10;
+            position: relative;
+            outline: none;
+        }
+        /* Cycle border color on hover/focus */
+         .card:nth-child(4n+1):is(:hover, :focus-visible) { border-color: var(--accent-coral); }
+         .card:nth-child(4n+2):is(:hover, :focus-visible) { border-color: var(--accent-teal); }
+         .card:nth-child(4n+3):is(:hover, :focus-visible) { border-color: var(--accent-gold); }
+         .card:nth-child(4n+4):is(:hover, :focus-visible) { border-color: var(--accent-purple); }
+
+
+        .card h4 {
+            /* Cycle card title colors */
+            /* color: var(--accent-purple); */ /* Static example */
+            margin-bottom: 10px;
+            font-size: 1.15em;
+            font-weight: 600;
+        }
+         /* Cycle title colors based on card position */
+         .card:nth-child(4n+1) h4 { color: var(--accent-coral); }
+         .card:nth-child(4n+2) h4 { color: var(--accent-teal); }
+         .card:nth-child(4n+3) h4 { color: var(--accent-gold); }
+         .card:nth-child(4n+4) h4 { color: var(--accent-purple); }
+
+        .card p {
+            font-size: 0.95em;
+            color: var(--text-medium);
+            font-weight: 400; /* Regular weight for description */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6; /* Light border */
+            font-size: 0.9em;
+            color: #888; /* Lighter grey for footer */
+            font-weight: 300;
+        }
+
+        /* === Responsive Adjustments === */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            section h2 { font-size: 1.5em; }
+            .card { flex-basis: calc(50% - 14px); } /* Aim for 2 cards per row */
+        }
+
+        @media (max-width: 500px) {
+            body { padding: 15px; }
+            header h1 { font-size: 1.8em; }
+            section h2 { font-size: 1.3em; }
+            .card-container { gap: 18px; }
+            .card { flex-basis: 100%; } /* 1 card per row */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JS Adventures with Blockly!</h1> <!-- Fun Title -->
+        <p>Your Friendly Guide to Starting with Code</p>
+    </header>
+
+    <main>
+        <!-- Section 1: Blockly Playground Examples -->
+        <section id="blockly-examples">
+            <h2>Blockly Play Zone</h2> <!-- Fun Section Title -->
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Build with Blocks</h4>
+                    <p>See your code come alive visually. It's like digital LEGO!</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Logic Puzzles</h4>
+                    <p>Master loops and choices by solving fun block challenges.</p>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://blockly-demo.appspot.com/static/demos/code/index.html" target="_blank" class="card">
+                    <h4>Treasure Chest (Variables)</h4>
+                    <p>Learn how to store and reuse important information easily.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <!-- Section 2: HTML/JavaScript Fundamentals -->
+        <section id="fundamentals">
+            <h2>Web Building Blocks</h2> <!-- Fun Section Title -->
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank" class="card">
+                    <h4>Hello, HTML!</h4>
+                    <p>Discover how web pages get their structure.</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank" class="card">
+                    <h4>JavaScript Magic</h4>
+                    <p>Uncover the secrets of making websites interactive.</p>
+                </a>
+                <!-- Card 3 -->
+                <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" class="card">
+                    <h4>Talking to the Page (DOM)</h4>
+                    <p>Learn how JavaScript changes what you see in the browser.</p>
+                </a>
+                 <!-- Card 4 -->
+                <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank" class="card">
+                    <h4>Code Recipes (Functions)</h4>
+                    <p>Write handy code snippets you can use again and again.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <!-- Section 3: Slides -->
+        <section id="slides">
+            <h2>Your Learning Journey</h2> <!-- Fun Section Title -->
+            <div class="card-container">
+                <!-- Card 1 -->
+                <a href="YOUR_SLIDES_LINK_1" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Chapter 1: Blast Off!</h4> <!-- Fun Naming -->
+                    <p>Getting started, setting up, and first steps with Blockly.</p>
+                </a>
+                <!-- Card 2 -->
+                <a href="YOUR_SLIDES_LINK_2" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Chapter 2: Brain Teasers</h4> <!-- Fun Naming -->
+                    <p>Exploring loops, decisions, and storing data.</p>
+                </a>
+                 <!-- Card 3 -->
+                <a href="YOUR_SLIDES_LINK_3" target="_blank" class="card"> <!-- Replace with actual link -->
+                    <h4>Chapter 3: Web Explorer</h4> <!-- Fun Naming -->
+                    <p>Connecting blocks to real HTML & JavaScript code.</p>
+                </a>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Mohan Kumar Gupta // Happy Coding!</p> <!-- Added fun message -->
+    </footer>
+
+</body>
+</html>
